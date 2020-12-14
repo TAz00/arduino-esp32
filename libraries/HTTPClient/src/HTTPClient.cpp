@@ -99,7 +99,7 @@ HTTPClient::HTTPClient()
  */
 HTTPClient::~HTTPClient()
 {
-    if(_client) {
+    if(_client && !_reuse) {
         _client->stop();
     }
     if(_currentHeaders) {
